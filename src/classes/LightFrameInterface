@@ -1,0 +1,4 @@
+public interface LightFrameInterface {
+    Result getData(Id recordId);
+    Result saveData(String data, Id recordId);
+}
