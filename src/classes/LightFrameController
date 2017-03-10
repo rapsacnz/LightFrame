@@ -9,8 +9,7 @@ public class LightFrameController implements LightFrameInterface {
     if (recordId == null) {
       return r.setResult('Invalid or blank Record Id.', LightFrameResult.FAILURE_BOOL);
     }
-
-		sObject[] records = [SELECT Id FROM {your object} WHERE Id = :recordId];
+    sObject[] records = [SELECT Id FROM {your object} WHERE Id = :recordId];
     if (records.isEmpty()) {
       return r.setResult('Record could not be found.', LightFrameResult.FAILURE_BOOL);
     }
@@ -25,7 +24,7 @@ public class LightFrameController implements LightFrameInterface {
     sObject obj;
 
     try {
-			//you will need to change this to your actual sobject here
+      //you will need to change this to your actual sobject here
       obj = (sObject)JSON.deserialize(data, sObject.class);
 			update obj;
     } catch (Exception e) {
