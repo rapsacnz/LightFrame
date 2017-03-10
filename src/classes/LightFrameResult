@@ -1,0 +1,29 @@
+public class LightFrameResult {
+		
+	  public static final Boolean SUCCESS_BOOL = true;
+	  public static final Boolean FAILURE_BOOL = false;
+
+	  @AuraEnabled
+	  public Boolean success {get; set;}
+	  @AuraEnabled
+	  public String message {get; set;}
+	  @AuraEnabled
+	  public String data {get; set;}  
+
+	  public LightFrameResult() {
+	    this.success = Result.SUCCESS_BOOL;
+	    this.message = '';
+	  }
+
+	  public LightFrameResult(String message, Boolean success) {
+	    success = success;
+	    message = '';
+	    System.debug(LoggingLevel.DEBUG, 'SOLIANT MESSAGE ' + this.message);
+	  }
+
+	  public LightFrameResult setResult(String message, Boolean success) {
+	    this.message = message;
+	    this.success = success;
+	    return this;
+	  }
+	}
