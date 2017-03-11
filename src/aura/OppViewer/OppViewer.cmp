@@ -1,0 +1,34 @@
+<aura:component extends="c:ComponentAbstract" controller="LightFrameController">
+
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+  <div class="slds">
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col">
+          <div class="slds-media">
+            <div class="slds-media__figure">
+
+              <div class=" slds-media slds-media--center ">
+                <div class="slds-media__figure">
+                  <lightning:icon iconName="action:record" size="medium" class="slds-icon slds-icon-action-record slds-icon--large" />
+                </div>
+              </div>
+
+            </div>
+            <div class="slds-media__body">
+              <p class="slds-text-heading--label">Opportunity Details</p>
+              <h2 class="slds-text-heading--large">{!v.opportunity.Name}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-no-flex slds-align-middle">
+          <div class="slds-button-group" role="group">
+            <button class="slds-button slds-button--neutral" onclick="{!c.myTraining}">Something</button>
+            <button class="slds-button slds-button--neutral" onclick="{!c.gotAnIdea}">Help</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</aura:component>
