@@ -1,6 +1,5 @@
 public class LightFrameController implements LightFrameInterface {
 
-
   @AuraEnabled
   public static LightFrameResult getData(Id recordId) {
 
@@ -16,7 +15,7 @@ public class LightFrameController implements LightFrameInterface {
     r.data = JSON.serialize(records[0] );
     return r;
   }
-
+  
   @AuraEnabled
   public static LightFrameResult saveData(String data,Id recordId) {
 
