@@ -1,0 +1,6 @@
+.THIS.slds .slds-select-height-fix {
+     
+    min-height: 2.225rem!important;
+    height: calc(1.875rem + (1px * 2));
+
+}
