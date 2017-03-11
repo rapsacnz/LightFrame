@@ -1,0 +1,76 @@
+<aura:component access="global">
+
+  <aura:attribute name="successMessage" type="String" />
+  <aura:attribute name="warningMessage" type="String" />
+  <aura:attribute name="errorMessage" type="String" />
+
+  <aura:method name="showSuccess" action="{!c.showSuccess}" description="Show the alert banner">
+    <aura:attribute name="text" type="String" default="" />
+    <aura:attribute name="autoClose" type="Boolean" default="false" />
+    <aura:attribute name="autoCloseDelay" type="Integer" default="5" />
+  </aura:method>
+
+  <aura:method name="showWarning" action="{!c.showWarning}" description="Show the warning banner">
+    <aura:attribute name="text" type="String" default="" />
+    <aura:attribute name="autoClose" type="Boolean" default="false" />
+    <aura:attribute name="autoCloseDelay" type="Integer" default="5" />
+  </aura:method>
+
+  <aura:method name="showError" action="{!c.showError}" description="Show the error banner">
+    <aura:attribute name="text" type="String" default="" />
+    <aura:attribute name="autoClose" type="Boolean" default="false" />
+    <aura:attribute name="autoCloseDelay" type="Integer" default="5" />
+  </aura:method>
+
+  <div class="slds">
+
+    <div aura:id="success-alert" class="slds-notify_container slds-hide">
+      <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+        <button class="slds-button slds-notify__close slds-notify__close slds-button--icon-inverse " onclick="{!c.handleAlertClose}">
+          <lightning:icon iconName="utility:close" class="slds-notify__close slds-button--icon-inverse slds-icon--x-small ch-icon-inverse" size="x-small" />
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <span class="slds-assistive-text">Success</span>
+        <h2>
+          <lightning:icon iconName="utility:check" size="x-small"
+            class="slds-icon slds-icon--x-small slds-m-right--small ch-icon-inverse" />
+          {!v.successMessage}
+        </h2>
+      </div>
+    </div>
+
+    <div aura:id="error-alert" class="slds-notify_container slds-hide">
+      <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+        <button class="slds-button slds-notify__close slds-button--icon-inverse" onclick="{!c.handleAlertClose}">
+          <lightning:icon iconName="utility:close" class="slds-notify__close slds-button--icon-inverse slds-icon--x-small ch-icon-inverse" size="x-small" />
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <span class="slds-assistive-text">Error</span>
+        <h2>
+          <lightning:icon iconName="utility:ban" size="x-small"
+            class="slds-icon slds-icon--x-small slds-m-right--small ch-icon-inverse" />
+            {!v.errorMessage}
+        </h2>
+      </div>
+    </div>
+
+
+    <div aura:id="warning-alert" class="slds-notify_container slds-hide">
+      <div class="slds-notify slds-notify--alert slds-theme--warning slds-theme--alert-texture" role="alert">
+        <button class="slds-button slds-notify__close slds-button--icon-inverse" onclick="{!c.handleAlertClose}">
+          <lightning:icon iconName="utility:close" class="slds-notify__close slds-button--icon-inverse slds-icon--x-small ch-icon-inverse" size="x-small" />
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <span class="slds-assistive-text">Warning</span>
+        <h2>
+          <lightning:icon iconName="utility:announcement" size="x-small"
+            class="slds-icon slds-icon--x-small slds-m-right--small ch-icon-inverse" />
+            {!v.warningMessage}
+        </h2>
+      </div>
+    </div>
+
+
+  </div>
+
+</aura:component>
