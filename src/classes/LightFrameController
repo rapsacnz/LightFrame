@@ -28,9 +28,7 @@ public class LightFrameController implements LightFrameInterface {
       obj = (sObject)JSON.deserialize(data, sObject.class);
 			update obj;
     } catch (Exception e) {
-      r.message = ('Line ' + e.getLineNumber() + ' ' + e.getMessage());
-      r.success = false;
-      return r;
+      return r.setResult(('Line ' + e.getLineNumber() + ' ' + e.getMessage()),LightFrameResult.FAILURE_BOOL);
     }
   }
 }
