@@ -1,0 +1,17 @@
+<aura:component >
+
+  <aura:method name="show" action="{!c.show}" >
+  </aura:method>
+
+  <aura:method name="hide" action="{!c.hide}" description="Allows the parent component to call filter on this component">
+  </aura:method>
+  
+   <div aura:id="spinner" class="slds-spinner_container ch-hide">
+      <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+        <span class="slds-assistive-text">Loading</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+
+</aura:component>
